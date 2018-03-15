@@ -16,13 +16,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class FunctionalTest extends TestBase{
 		
 	 private WebDriver driver;
-	 
+
 	 
 	// HomePage homepage = new HomePage();
 	 @Test(priority = 0, description = "First test case TC001")
 	 public void test() {
 		 System.out.println("hi");
-
+		
 			
 		
 	}
