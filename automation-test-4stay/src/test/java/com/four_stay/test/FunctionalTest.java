@@ -22,6 +22,8 @@ public class FunctionalTest extends TestBase{
 	 @Test(priority = 0, description = "First test case TC001")
 	 public void test() {
 		 System.out.println("test4staysd");
+		 System.out.println("test4staysd");
+
 	
 			
 		
