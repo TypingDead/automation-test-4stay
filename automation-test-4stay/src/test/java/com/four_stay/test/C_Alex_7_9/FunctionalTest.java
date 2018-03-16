@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FunctionalTest extends TestBase{
 		
-	 private WebDriver driver;
+
 
 	 
 	// HomePage homepage = new HomePage();

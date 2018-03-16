@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
-protected WebDriver driver;
+	protected WebDriver driver;
 	
 	@BeforeClass(alwaysRun=true)
 	public  void setUp() {
