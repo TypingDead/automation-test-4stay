@@ -20,7 +20,7 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
+
 	//	@FindBy(className="billLabel")
 	//	public WebElement billLabel;	
 

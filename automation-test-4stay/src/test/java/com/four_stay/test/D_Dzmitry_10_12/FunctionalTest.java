@@ -7,7 +7,6 @@ import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.TestBase;
 
 public class FunctionalTest extends TestBase {
-
 	@Test(priority = 0, description = "First test case TC011")
 	public void test() throws InterruptedException {
 

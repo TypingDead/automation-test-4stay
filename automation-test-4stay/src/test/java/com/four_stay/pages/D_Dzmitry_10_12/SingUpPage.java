@@ -14,7 +14,6 @@ public class SingUpPage {
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);
 	}
-
 	@FindBy(linkText = "LIST YOUR STAY")
 	public WebElement listYourStayButton;
 
