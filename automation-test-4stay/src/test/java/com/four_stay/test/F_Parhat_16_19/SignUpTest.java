@@ -30,7 +30,7 @@ public class SignUpTest extends TestBase{
 	 HomePage homepage = new HomePage();
 	 SignUpPage signUp = new SignUpPage();
 	
-	 @Test(priority = 0, description = "test case TC018")
+	// @Test(priority = 0, description = "test case TC018")
 	 public void testCase18() {
 		assertTrue(homepage.isAt());
 		assertTrue(homepage.isAtUrl());
@@ -45,8 +45,11 @@ public class SignUpTest extends TestBase{
 	 @Test(priority = 1, description = "test case TC019")
 	 public void testCase19() {
 		homepage.sendKeyToSearchBox();
-		Select select = new Select((WebElement) driver);
-		select.getFirstSelectedOption();
+		WebElement mySelectElm = homepage.searchBox; 
+		Select mySelect= new Select(mySelectElm);
+		
+		//Select select = new Select(homepage.searchBox);
+		mySelect.getFirstSelectedOption();
 		homepage.ClickSearchButton();
 		
 	} 

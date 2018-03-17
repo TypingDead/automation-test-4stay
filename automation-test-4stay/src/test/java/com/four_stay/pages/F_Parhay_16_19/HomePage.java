@@ -36,10 +36,9 @@ public class HomePage {
 	
 	}
 	public void sendKeyToSearchBox() {
-		searchBox.sendKeys("Jones Branch Dr, Tysons , VA 22102, USA");
+		searchBox.sendKeys("Jones Branch Dr, Tysons");
 		
 	}
-	
 	
 	
 	public void ClickSearchButton() {
