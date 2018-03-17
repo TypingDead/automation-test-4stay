@@ -25,5 +25,7 @@ public class FunctionalTest extends TestBase {
 
 		Assert.assertNotEquals(singUpPage.currentUrl, singUpPage.profileDetailsPage);
 
+		
+		
 	}
 }
