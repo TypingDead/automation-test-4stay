@@ -1,6 +1,8 @@
 package com.four_stay.pages.D_Dzmitry_10_12;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.four_stay.utilities.Driver;
@@ -18,7 +20,8 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
+
 	//	@FindBy(className="billLabel")
-	//	public WebElement billLabel;
+	//	public WebElement billLabel;	
+
 }

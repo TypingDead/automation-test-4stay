@@ -1,27 +1,30 @@
 package com.four_stay.test.D_Dzmitry_10_12;
 
- import org.openqa.selenium.By;
-
-//mvn -Dtest=FunctionalTest test 
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import com.four_stay.pages.D_Dzmitry_10_12.SingUpPage;
+import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.TestBase;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+public class FunctionalTest extends TestBase {
+	@Test(priority = 0, description = "First test case TC011")
+	public void test() throws InterruptedException {
 
-public class FunctionalTest extends TestBase{
+		SingUpPage singUpPage = new SingUpPage();
 
+		singUpPage.listYourStayButton.click();
 
-	 
-	// HomePage homepage = new HomePage();
-	 @Test(priority = 0, description = "First test case TC001")
-	 public void test() {
-		 System.out.println("hi");
+		singUpPage.loginHereLink.click();
+
+		singUpPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
+
+		singUpPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+
+		singUpPage.loginButton.click();
+
+		Assert.assertNotEquals(singUpPage.currentUrl, singUpPage.profileDetailsPage);
+
 		
-			
 		
 	}
 }
