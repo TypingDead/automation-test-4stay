@@ -21,7 +21,7 @@ public class BrowserUtils {
 
 	public static String randomEmailGenerator() {
 		Random rad = new Random();
-		return "some" + rad.nextInt(100) + "username" + rad.nextInt(100) + "@gmail.com";
+		return "any" + rad.nextInt(1000) + "useRname" + rad.nextInt(1000) + "@gmail.com";
 
 	}
 
