@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.E_Elvira_13_15.HomePage;
+import com.four_stay.pages.E_Elvira_13_15.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
@@ -15,7 +15,7 @@ import com.four_stay.utilities.TestBase;
 
 public class FunctionalTest extends TestBase {
 
-	HomePage homepage = new HomePage();
+	SignUpPage signUpPage = new SignUpPage();
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -25,26 +25,26 @@ public class FunctionalTest extends TestBase {
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(driver, 3);
-		wait.until(ExpectedConditions.elementToBeClickable(homepage.moreOptions));
-		homepage.moreOptions.click();
-		homepage.emailSignInOption.click();
+		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
+		signUpPage.moreOptions.click();
+		signUpPage.emailSignInOption.click();
 		wait = new WebDriverWait(driver, 3);
-		wait.until(ExpectedConditions.visibilityOf(homepage.firstName));
+		wait.until(ExpectedConditions.visibilityOf(signUpPage.firstName));
 
-		assertTrue(homepage.firstName.isDisplayed());
-		assertTrue(homepage.lastName.isDisplayed());
+		assertTrue(signUpPage.firstName.isDisplayed());
+		assertTrue(signUpPage.lastName.isDisplayed());
 
-		homepage.firstName.sendKeys("Elvira");
-		homepage.lastName.sendKeys("Metoff");
-		homepage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
-		homepage.newPassword.sendKeys(ConfigurationReader.getProperty("password"));
+		signUpPage.firstName.sendKeys("Elvira");
+		signUpPage.lastName.sendKeys("Metoff");
+		signUpPage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
+		signUpPage.newPassword.sendKeys(ConfigurationReader.getProperty("password"));
 
-		homepage.signUpButton.click();
+		signUpPage.signUpButton.click();
 
-		assertTrue(homepage.closeX.isEnabled());
+		assertTrue(signUpPage.closeX.isEnabled());
 
 		Thread.sleep(5000);
-		homepage.closeX.click();
+		signUpPage.closeX.click();
 
 		// driver.navigate().back();
 		// JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -59,8 +59,8 @@ public class FunctionalTest extends TestBase {
 		// driver.findElement(By.cssSelector("button[class='close p-1 mr-3 mt-2
 		// mb-2']")).sendKeys(Keys.ENTER);
 
-		homepage.verifyFirstNameIsNotPresent();
-		homepage.verifyLastNameIsNotPresent();
+		signUpPage.verifyFirstNameIsNotPresent();
+		signUpPage.verifyLastNameIsNotPresent();
 
 	}
 
@@ -70,32 +70,32 @@ public class FunctionalTest extends TestBase {
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(driver, 3);
-		wait.until(ExpectedConditions.elementToBeClickable(homepage.moreOptions));
-		homepage.moreOptions.click();
-		homepage.emailSignInOption.click();
+		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
+		signUpPage.moreOptions.click();
+		signUpPage.emailSignInOption.click();
 
-		wait.until(ExpectedConditions.visibilityOf(homepage.firstName));
+		wait.until(ExpectedConditions.visibilityOf(signUpPage.firstName));
 
-		assertTrue(homepage.firstName.isDisplayed());
-		assertTrue(homepage.lastName.isDisplayed());
+		assertTrue(signUpPage.firstName.isDisplayed());
+		assertTrue(signUpPage.lastName.isDisplayed());
 
-		homepage.firstName.sendKeys("Elvira");
-		homepage.lastName.sendKeys("Metoff");
-		homepage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
-		homepage.newPassword.sendKeys(ConfigurationReader.getProperty("password"));
+		signUpPage.firstName.sendKeys("Elvira");
+		signUpPage.lastName.sendKeys("Metoff");
+		signUpPage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
+		signUpPage.newPassword.sendKeys(ConfigurationReader.getProperty("password"));
 
-		homepage.signUpButton.click();
+		signUpPage.signUpButton.click();
 
-		homepage.guestIcon.click();
-		homepage.nextButton.click();
+		signUpPage.guestIcon.click();
+		signUpPage.nextButton.click();
 
-		wait.until(ExpectedConditions.visibilityOf(homepage.phoneInput));
-		homepage.phoneInput.sendKeys("11");
-		homepage.aboutMe.sendKeys("I am a nice guest with a coding background");
-		homepage.yearInput.sendKeys("1999");
-		homepage.saveButton.click();
+		wait.until(ExpectedConditions.visibilityOf(signUpPage.phoneInput));
+		signUpPage.phoneInput.sendKeys("11");
+		signUpPage.aboutMe.sendKeys("I am a nice guest with a coding background");
+		signUpPage.yearInput.sendKeys("1999");
+		signUpPage.saveButton.click();
 
-		assertTrue(homepage.logOut.isDisplayed());
+		assertTrue(signUpPage.logOut.isDisplayed());
 	}
 
 	@Test(description = "Test case TC015")
@@ -104,32 +104,32 @@ public class FunctionalTest extends TestBase {
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(driver, 3);
-		wait.until(ExpectedConditions.elementToBeClickable(homepage.moreOptions));
-		homepage.moreOptions.click();
-		homepage.emailSignInOption.click();
+		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
+		signUpPage.moreOptions.click();
+		signUpPage.emailSignInOption.click();
 
-		wait.until(ExpectedConditions.visibilityOf(homepage.firstName));
+		wait.until(ExpectedConditions.visibilityOf(signUpPage.firstName));
 
-		assertTrue(homepage.firstName.isDisplayed());
-		assertTrue(homepage.lastName.isDisplayed());
+		assertTrue(signUpPage.firstName.isDisplayed());
+		assertTrue(signUpPage.lastName.isDisplayed());
 
-		homepage.firstName.sendKeys("Elvira");
-		homepage.lastName.sendKeys("Metoff");
-		homepage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
-		homepage.newPassword.sendKeys(ConfigurationReader.getProperty("password"));
+		signUpPage.firstName.sendKeys("Elvira");
+		signUpPage.lastName.sendKeys("Metoff");
+		signUpPage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
+		signUpPage.newPassword.sendKeys(ConfigurationReader.getProperty("password"));
 
-		homepage.signUpButton.click();
+		signUpPage.signUpButton.click();
 
-		homepage.guestIcon.click();
-		homepage.nextButton.click();
+		signUpPage.guestIcon.click();
+		signUpPage.nextButton.click();
 
-		wait.until(ExpectedConditions.visibilityOf(homepage.phoneInput));
-		homepage.phoneInput.sendKeys("th");
-		homepage.aboutMe.sendKeys("I am a nice guest with a coding background");
-		homepage.yearInput.sendKeys("1999");
-		homepage.saveButton.click();
+		wait.until(ExpectedConditions.visibilityOf(signUpPage.phoneInput));
+		signUpPage.phoneInput.sendKeys("th");
+		signUpPage.aboutMe.sendKeys("I am a nice guest with a coding background");
+		signUpPage.yearInput.sendKeys("1999");
+		signUpPage.saveButton.click();
 
-		homepage.verifyLogOutIsNotPresent();
+		signUpPage.verifyLogOutIsNotPresent();
 	}
 
 }

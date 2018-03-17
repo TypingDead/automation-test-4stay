@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.four_stay.utilities.Driver;
 
-public class HomePage {
+public class SignUpPage {
 
 	private WebDriver driver;
 
-	public HomePage() {
+	public SignUpPage() {
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);
 	}
