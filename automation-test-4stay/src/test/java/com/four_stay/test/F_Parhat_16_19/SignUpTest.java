@@ -6,12 +6,14 @@ import static org.testng.Assert.assertTrue;
 import javax.swing.border.TitledBorder;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 //mvn -Dtest=FunctionalTest test 
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
@@ -45,13 +47,15 @@ public class SignUpTest extends TestBase{
 	 @Test(priority = 1, description = "test case TC019")
 	 public void testCase19() {
 		homepage.sendKeyToSearchBox();
-		WebElement mySelectElm = homepage.searchBox; 
-		Select mySelect= new Select(mySelectElm);
-		
-		//Select select = new Select(homepage.searchBox);
-		mySelect.getFirstSelectedOption();
+	//	driver.findElement(By.id("1c424ec2bb8c8770377d066a207d31b4aff918a5")).click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).perform();
+		action.sendKeys(Keys.ENTER).perform();
+		BrowserUtils.waitFor(5);
 		homepage.ClickSearchButton();
-		
+		String value = homepage.result.getText();
+		Integer.parseInt(value);
+		assertTrue(Integer.parseInt(value) > 0);
 	} 
 	 
 	 

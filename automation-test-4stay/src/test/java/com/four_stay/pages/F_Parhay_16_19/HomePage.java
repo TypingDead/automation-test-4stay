@@ -31,6 +31,11 @@ public class HomePage {
 	@FindBy(xpath="//*[@class='tooltip-inner']")
 	public WebElement AfterclicktheButton;
 	
+	
+	@FindBy(xpath="//b[@class='ng-binding']")
+	public WebElement result;
+	
+	
 	public void clickSearchBox() {
 		searchBox.click();
 	
