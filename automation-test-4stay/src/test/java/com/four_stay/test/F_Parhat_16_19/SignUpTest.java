@@ -58,9 +58,16 @@ public class SignUpTest extends TestBase{
 		assertTrue(Integer.parseInt(value) > 0);
 	} 
 	 
+	 @Test(priority = 1, description = "test case TC011 From different test case")
+	 public void testCase11() {
+		 
+	 }
 	 
 	 
-	 
+	 @Test(priority = 1, description = "test case TC012 From different test case")
+	 public void testCase12() {
+		 
+	 }
 	 
 	 
 	 
