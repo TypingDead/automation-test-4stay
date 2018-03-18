@@ -17,8 +17,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.F_Parhay_16_19.HomePage;
-import com.four_stay.pages.F_Parhay_16_19.SignUpPage;
+import com.four_stay.pages.F_Parhat_16_19.HomePage;
+import com.four_stay.pages.F_Parhat_16_19.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
@@ -58,13 +58,13 @@ public class SignUpTest extends TestBase{
 		assertTrue(Integer.parseInt(value) > 0);
 	} 
 	 
-	 @Test(priority = 1, description = "test case TC011 From different test case")
+	 @Test(priority = 2, description = "test case TC011 From different test case")
 	 public void testCase11() {
 		 
 	 }
 	 
 	 
-	 @Test(priority = 1, description = "test case TC012 From different test case")
+	 @Test(priority = 3, description = "test case TC012 From different test case")
 	 public void testCase12() {
 		 
 	 }

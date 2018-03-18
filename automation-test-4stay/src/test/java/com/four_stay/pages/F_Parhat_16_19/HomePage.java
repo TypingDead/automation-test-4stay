@@ -1,4 +1,4 @@
-package com.four_stay.pages.F_Parhay_16_19;
+package com.four_stay.pages.F_Parhat_16_19;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
