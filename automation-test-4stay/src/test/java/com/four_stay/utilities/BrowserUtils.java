@@ -19,6 +19,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BrowserUtils {
 	private static WebDriver driver = Driver.getDriver();
 
+	public static void highLighterBackground(WebElement element) {
+
+		JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+		js.executeScript("arguments[0].setAttribute('style','background: yellow; border: 2px solid red;');", element);
+		waitFor(2);
+		js.executeScript("arguments[0].setAttribute('style','background: white; border: 2px solid red;');", element);
+
+	}
+
+	public static void highlightAreaWithJavascript(WebElement element)  {
+		// Highlights and unhighlights the area with JS
+
+		JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+		js.executeScript("arguments[0].style.border= '3px solid red'", element);
+		waitFor(2);
+		js.executeScript("arguments[0].style.border= '3px solid white'", element);
+	}
+
 	public static String randomEmailGenerator() {
 		Random rad = new Random();
 		return "any" + rad.nextInt(1000) + "useRname" + rad.nextInt(1000) + "@gmail.com";

@@ -46,19 +46,6 @@ public class FunctionalTest extends TestBase {
 		Thread.sleep(5000);
 		signUpPage.closeX.click();
 
-		// driver.navigate().back();
-		// JavascriptExecutor jse = (JavascriptExecutor)driver;
-		// jse.executeScript("window.history.go(-1);");
-
-		// wait.until(ExpectedConditions.elementToBeClickable(homepage.closeX));
-
-		// JavascriptExecutor jse = (JavascriptExecutor)driver;
-		// jse.executeScript("arguments[0].click();", homepage.closeX);
-		// Actions action = new Actions(driver);
-		// action.click(homepage.closeX).build().perform();
-		// driver.findElement(By.cssSelector("button[class='close p-1 mr-3 mt-2
-		// mb-2']")).sendKeys(Keys.ENTER);
-
 		signUpPage.verifyFirstNameIsNotPresent();
 		signUpPage.verifyLastNameIsNotPresent();
 
