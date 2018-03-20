@@ -4,20 +4,17 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
-
-//mvn -Dtest=FunctionalTest test 
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.C_Alex_7_9.HomePage;
+import com.four_stay.pages.HomePage;
+import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.utilities.BrowserUtils;
+import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.TestBase;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * 
@@ -26,36 +23,34 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class FunctionalTest extends TestBase {
 
-	String actualUrl = "https://4stay.com/";
-	String actualForgotPassword = "Forgot Password?";
 	WebDriverWait wait;
 
 	HomePage homepage = new HomePage();
+	ListYourStayPage listYourStayPage = new ListYourStayPage();
 
-	@Test(priority = 0, description = "First test case TC001")
-	public void test() throws InterruptedException {
-		String expectedUrl = driver.getCurrentUrl();
-		assertEquals(expectedUrl, actualUrl);
+	// @Test(description = "First test case TC007")
+	public void test007() {
 
-		assertTrue(homepage.validateLogIn());
+		homepage.isAtUrl();
 
-		homepage.logIn.click();
+		assertTrue(homepage.login.isDisplayed());
 
-		boolean emptyEmail = homepage.emailAddress.getText().isEmpty();
+		homepage.login.click();
+
+		boolean emptyEmail = homepage.userEmail.getText().isEmpty();
 		assertTrue(emptyEmail);
 
-		boolean emptyPassword = homepage.password.getText().isEmpty();
+		boolean emptyPassword = homepage.userPassword.getText().isEmpty();
 		assertTrue(emptyPassword);
 
 		wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.visibilityOf(homepage.forgotPassword));
-		String expectedForgotPassword = homepage.forgotPassword.getText();
-		assertEquals(expectedForgotPassword, actualForgotPassword);
+		homepage.forgotPasswordMessage();
 
-		BrowserUtils.waitFor(5);
 		homepage.forgotPassword.click();
+		BrowserUtils.waitFor(5);
 		homepage.forgotPasswordDisplay();
-		
+
 		BrowserUtils.waitFor(5);
 		homepage.resetInstruction.click();
 
@@ -64,7 +59,37 @@ public class FunctionalTest extends TestBase {
 		System.out.println(homepage.emailCantBeBlank.getText());
 		// done
 	}
-	
-	
+
+	@Test(description = "First test case TC008")
+	public void test008() throws InterruptedException {
+
+		listYourStayPage.listYourStayButton.click();
+
+		listYourStayPage.firstName.sendKeys("Alex");
+		listYourStayPage.lastName.sendKeys("Rodriguez");
+
+		listYourStayPage.emailAddress.sendKeys(BrowserUtils.randomEmailGenerator());
+		listYourStayPage.password.sendKeys(ConfigurationReader.getProperty("password"));
+
+		listYourStayPage.phoneNumber.sendKeys("11");
+		listYourStayPage.checkBox();
+
+		listYourStayPage.createAccount.click();
+
+		String current = driver.getCurrentUrl();
+		Assert.assertEquals(current, listYourStayPage.profileDetailsPage);
+
+	}
+
+	// @Test(description = "First test case TC009")
+	public void test009() {
+
+		listYourStayPage.isAtUrl();
+		listYourStayPage.listYourStayButton.click();
+		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrl);
+
+		listYourStayPage.facebookSignup.click();
+
+	}
 
 }
