@@ -28,7 +28,7 @@ public class FunctionalTest extends TestBase {
 	HomePage homepage = new HomePage();
 	ListYourStayPage listYourStayPage = new ListYourStayPage();
 
-	// @Test(description = "First test case TC007")
+	@Test(description = "First test case TC007")
 	public void test007() {
 
 		homepage.isAtUrl();
@@ -76,12 +76,13 @@ public class FunctionalTest extends TestBase {
 
 		listYourStayPage.createAccount.click();
 
+		BrowserUtils.waitFor(5);
 		String current = driver.getCurrentUrl();
 		Assert.assertEquals(current, listYourStayPage.profileDetailsPage);
 
 	}
 
-	// @Test(description = "First test case TC009")
+	@Test(description = "First test case TC009")
 	public void test009() {
 
 		listYourStayPage.isAtUrl();
