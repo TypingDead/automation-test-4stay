@@ -48,7 +48,7 @@ public class FunctionalTest extends TestBase {
 		Thread.sleep(2000);
 		homepage.login.click();
 		assertTrue(homepage.logo.isDisplayed());
-		homepage.userEmail.sendKeys("zmiakhel@gamil.com");
+		homepage.userEmail.sendKeys("zmiakhel@gmail.com");
 		homepage.loginButton.click();
 		BrowserUtils.waitFor(3);
 		assertEquals(homepage.invalidmessage.getText(), "Invalid email or password. Please try again.");
