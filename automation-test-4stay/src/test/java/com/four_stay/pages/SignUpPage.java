@@ -1,4 +1,4 @@
-package com.four_stay.pages.E_Elvira_13_15;
+package com.four_stay.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;

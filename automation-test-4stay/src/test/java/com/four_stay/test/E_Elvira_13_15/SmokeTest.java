@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.E_Elvira_13_15.AdvancedSearchResultsPage;
-import com.four_stay.pages.E_Elvira_13_15.HomePage;
+import com.four_stay.pages.AdvancedSearchResultsPage;
+import com.four_stay.pages.HomePage;
 import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
