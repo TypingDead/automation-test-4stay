@@ -14,19 +14,20 @@ public class ListYourStayPage {
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(linkText = "LIST YOUR STAY")
 	public WebElement listYourStayButton;
 
-	@FindBy(id="login-here")
+	@FindBy(id = "login-here")
 	public WebElement loginHereLink;
-	
-	@FindBy(id="user_email")
+
+	@FindBy(id = "user_email")
 	public WebElement emailAddressBox;
 
-	@FindBy(id="user_password")
+	@FindBy(id = "user_password")
 	public WebElement passwordBox;
 
-	@FindBy(id="login_btn")
+	@FindBy(id = "login_btn")
 	public WebElement loginButton;
 
 	public String profileDetailsPage = "https://4stay.com/sign-up#!/profile-details";
