@@ -2,7 +2,8 @@ package com.four_stay.test.D_Dzmitry_10_12;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.four_stay.pages.D_Dzmitry_10_12.SingUpPage;
+
+import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.TestBase;
 
@@ -10,19 +11,19 @@ public class FunctionalTest extends TestBase {
 	@Test(priority = 0, description = "First test case TC011")
 	public void test() throws InterruptedException {
 
-		SingUpPage singUpPage = new SingUpPage();
+		ListYourStayPage listYourStayPage = new ListYourStayPage();
 
-		singUpPage.listYourStayButton.click();
+		listYourStayPage.listYourStayButton.click();
 
-		singUpPage.loginHereLink.click();
+		listYourStayPage.loginHereLink.click();
 
-		singUpPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
+		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
 
-		singUpPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+		listYourStayPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
 
-		singUpPage.loginButton.click();
+		listYourStayPage.loginButton.click();
 
-		Assert.assertNotEquals(singUpPage.currentUrl, singUpPage.profileDetailsPage);
+		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
 
 		
 		
