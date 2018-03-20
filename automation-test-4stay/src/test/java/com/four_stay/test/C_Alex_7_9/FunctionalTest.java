@@ -65,6 +65,9 @@ public class FunctionalTest extends TestBase {
 
 		listYourStayPage.listYourStayButton.click();
 
+		String current = driver.getCurrentUrl();
+		Assert.assertEquals(current, listYourStayPage.actualHostUrl);
+
 		listYourStayPage.firstName.sendKeys("Alex");
 		listYourStayPage.lastName.sendKeys("Rodriguez");
 
@@ -77,8 +80,8 @@ public class FunctionalTest extends TestBase {
 		listYourStayPage.createAccount.click();
 
 		BrowserUtils.waitFor(5);
-		String current = driver.getCurrentUrl();
-		Assert.assertEquals(current, listYourStayPage.profileDetailsPage);
+		String current1 = driver.getCurrentUrl();
+		Assert.assertEquals(current1, listYourStayPage.profileDetailsPage);
 
 	}
 
