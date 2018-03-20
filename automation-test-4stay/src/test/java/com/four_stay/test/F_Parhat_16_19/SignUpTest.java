@@ -3,28 +3,14 @@ package com.four_stay.test.F_Parhat_16_19;
  import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import javax.swing.border.TitledBorder;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-
-//mvn -Dtest=FunctionalTest test 
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.F_Parhat_16_19.HomePage;
-import com.four_stay.pages.F_Parhat_16_19.SignUpPage;
+import com.four_stay.pages.HomePage;
+import com.four_stay.pages.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
-import com.four_stay.utilities.ConfigurationReader;
-import com.four_stay.utilities.Driver;
 import com.four_stay.utilities.TestBase;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SignUpTest extends TestBase{
 		
@@ -37,8 +23,8 @@ public class SignUpTest extends TestBase{
 		assertTrue(homepage.isAt());
 		assertTrue(homepage.isAtUrl());
 		homepage.clickSearchBox();
-		assertTrue(homepage.searchBox.getText().isEmpty());
-		homepage.ClickSearchButton();
+		assertTrue(homepage.searchTab.getText().isEmpty());
+		homepage.searchButton.click();
 		assertEquals(homepage.AfterclicktheButton.getText(), "Please type your city, college, or metro");
 	}
 	 
@@ -52,7 +38,7 @@ public class SignUpTest extends TestBase{
 		action.sendKeys(Keys.ARROW_DOWN).perform();
 		action.sendKeys(Keys.ENTER).perform();
 		BrowserUtils.waitFor(5);
-		homepage.ClickSearchButton();
+		homepage.searchButton.click();
 		String value = homepage.result.getText();
 		Integer.parseInt(value);
 		assertTrue(Integer.parseInt(value) > 0);

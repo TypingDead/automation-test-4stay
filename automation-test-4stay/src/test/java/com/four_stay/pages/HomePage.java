@@ -46,7 +46,32 @@ public class HomePage {
 	@FindBy(id = "login_status")
 	public WebElement invalidmessage;
 	
+	@FindBy(xpath="//*[@class='tooltip-inner']")
+	public WebElement AfterclicktheButton;
+	
+	@FindBy(xpath="//b[@class='ng-binding']")
+	public WebElement result;
+	
 	@FindBy(xpath = "//div[@class='modal fade login-modal show']//div//div//div/button")
 	public WebElement close;
+	
+	public void sendKeyToSearchBox() {
+		searchTab.sendKeys("Jones Branch Dr, Tysons");
+		
+	}
+	
+	public void clickSearchBox() {
+		searchTab.click();
+	
+	}
+	
+	
+	public boolean isAt() {
+		return driver.getTitle().equals("Room rental, roommate finder, off-campus housing, homestay | 4stay");
+	}
+	
+	public boolean isAtUrl() {
+		return driver.getCurrentUrl().equals("https://4stay.com/");
+	}
 	
 }
