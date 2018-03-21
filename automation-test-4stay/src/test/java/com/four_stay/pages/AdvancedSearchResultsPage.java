@@ -22,11 +22,50 @@ public class AdvancedSearchResultsPage {
 	@FindBy (id="check-button")
 	public WebElement requestStay;
 	
+	
+	
 	@FindBy (css="a[class='dropdown-toggle']")
 	public WebElement dropDown;
 	
 	@FindBy(linkText="Log Out")
 	public WebElement logOut;
+	
+	@FindBy(xpath="//div[@class='logo animated fadeInDown ml-auto mr-auto']")
+	public WebElement logo;
+	
+	@FindBy(xpath="//*[@id=\"page-container\"]/div[2]/div/h2")
+	public WebElement congratulation;
+	
+	@FindBy(xpath="//a[@class='btn-outline-primary btn']")
+	public WebElement requestCenter;
+	
+	@FindBy(linkText="Cancel")
+	public WebElement cancelButton;
+	
+	public void CongratulationDisplay() {
+		congratulation.isDisplayed();
+		requestCenter.isDisplayed();
+		System.out.println(congratulation.getText());
+		System.out.println(requestCenter.getText());
+	}
+	
+	
+	
+	
+	
+	
+	public boolean isAt() {
+		return driver.getTitle().equals("Advanced searchLos Angeles, CA, USA stays | Room rental, roommate finder, off-campus housing, homestay | 4stay");
+	}
+	
+	public boolean isUrl() {
+		return driver.getCurrentUrl().contains("https://4stay.com/advanced_search?lat=34.0522342&long=-118.2436849&place_title=Los%20Angeles,%20CA,%20USA&move_in=2018-03-22&move_out=2018-09-21&number_of_beds=1");
+	}
+	
+	
+	public boolean titleContains() {
+		return driver.getTitle().contains(firstResult.getText());
+	}
 	
 	
 	public static void changeWindow(WebDriver driver) {
