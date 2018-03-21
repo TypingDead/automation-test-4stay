@@ -52,8 +52,17 @@ public class ListYourStayPage {
 	@FindBy(xpath = "//input[@type='submit'][@value='Create account']")
 	public WebElement createAccount;
 	
+	@FindBy(linkText="Log Out")
+	public WebElement logoutListyourStay;
+	
 	@FindBy(linkText="SIGN UP WITH FACEBOOK")
 	public WebElement facebookSignup;
+	
+	@FindBy(xpath="//div[@id='email_container']//input")
+	public WebElement facebookEmail;
+	
+	@FindBy(xpath="(//div[@class='clearfix form_row'])[2]//input")
+	public WebElement facebookpassword;
 	
 	public boolean isAtUrl() {
 		return driver.getCurrentUrl().equals("https://4stay.com/");
