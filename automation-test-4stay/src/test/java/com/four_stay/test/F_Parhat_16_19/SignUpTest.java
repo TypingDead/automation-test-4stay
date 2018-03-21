@@ -74,6 +74,7 @@ public class SignUpTest extends TestBase{
 		 searchResult.requestStay.click();
 		 BrowserUtils.waitFor(2);
 		 assertTrue(searchResult.logo.isDisplayed());
+		 
 	 }
 	 
 	 
