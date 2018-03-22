@@ -96,7 +96,6 @@ public class FunctionalTest extends TestBase {
 		
 		assertTrue(homePage.isAt());
 		homePage.searchButton.click();
-		
 		assertEquals(homePage.alertMessage.getText(),"Please type your city, college, or metro");
 		
 		assertTrue(homePage.isAt());
