@@ -53,11 +53,11 @@ public class AdvancedSearchResultsPage {
 	
 	
 	public boolean isAt() {
-		return driver.getTitle().contains("Los Angeles, CA, USA");
+		return driver.getTitle().contains("Washington, DC, USA");
 	}
 	
 	public boolean isUrl() {
-		return driver.getCurrentUrl().contains("https://4stay.com/advanced_search");
+		return driver.getCurrentUrl().contains("https://fourstay-staging.herokuapp.com/advanced_search");
 	}
 	
 	

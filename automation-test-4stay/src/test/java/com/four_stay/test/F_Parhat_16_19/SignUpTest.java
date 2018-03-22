@@ -101,11 +101,11 @@ public class SignUpTest extends TestBase{
 		 searchResult.changeWindow(driver);
 		 searchResult.titleContains();
 		 BrowserUtils.waitFor(2);
-		 searchResult.requestStay.click();
-		 BrowserUtils.waitFor(2);
-		 searchResult.CongratulationDisplay();
-		 searchResult.requestCenter.click();
-		 searchResult.cancelButton.click();
+//		 searchResult.requestStay.click();
+//		 BrowserUtils.waitFor(2);
+//		 searchResult.CongratulationDisplay();
+//		 searchResult.requestCenter.click();
+//		 searchResult.cancelButton.click();
 		 
 		 
 		 
