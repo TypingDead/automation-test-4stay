@@ -55,7 +55,7 @@ public class SmokeTest extends TestBase {
 				"Advanced searchLocust St, Pittsburgh, PA, USA stays | Room rental, roommate finder, off-campus housing, homestay | 4stay");
 		advancedSearchPage.firstResult.click();
 		AdvancedSearchResultsPage.changeWindow(driver);
-		// advancedSearchPage.requestStay.click();
+		advancedSearchPage.requestStay.click();
 
 		advancedSearchPage.dropDown.click();
 		advancedSearchPage.logOut.click();
