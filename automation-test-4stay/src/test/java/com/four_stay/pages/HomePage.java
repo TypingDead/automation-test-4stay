@@ -90,5 +90,8 @@ public class HomePage {
 	public boolean forgotPasswordMessage() {
 		return forgotPassword.getText().equals(("Forgot Password?"));
 	}
+	/////////////////////////////
+	@FindBy(className = "tooltip-inner")
+	public WebElement alertMessage;
 
 }
