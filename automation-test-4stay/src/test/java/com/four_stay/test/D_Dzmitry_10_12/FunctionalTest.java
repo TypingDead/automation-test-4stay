@@ -20,22 +20,17 @@ public class FunctionalTest extends TestBase {
 	public void test() throws InterruptedException {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
-
 		listYourStayPage.listYourStayButton.click();
-
 		listYourStayPage.loginHereLink.click();
-
 		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
-
 		listYourStayPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
-
 		listYourStayPage.loginButton.click();
 
 		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
 
 	}
 	//testCase#12
-	@Test(priority = 1)
+	@Test(priority = 1, description = "First test case TC012")
 	public void signUpTest() throws InterruptedException {
 		SignUpPage singUpPage = new SignUpPage();
 		singUpPage.navigateToSingUpPage();
@@ -86,7 +81,7 @@ public class FunctionalTest extends TestBase {
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/profile-details");
 	}
 	//testCase#9SY2
-	@Test(priority = 2)
+	@Test(priority = 2, description = "test case 9 from other test cases SY2")
 	public void searshFunctionalityNegativeTest() {
 		
 		HomePage homePage = new HomePage();

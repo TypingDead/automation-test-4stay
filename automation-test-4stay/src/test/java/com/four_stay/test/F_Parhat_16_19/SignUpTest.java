@@ -78,15 +78,15 @@ public class SignUpTest extends TestBase{
 	 }
 	 
 	 
-	 @Test(priority = 3, description = "test case TC012 From different test case")
+	// @Test(priority = 3, description = "test case TC012 From different test case")
 	 public void testCase12() {
 		 Actions action = new Actions(driver);
 		 driver.get(ConfigurationReader.getProperty("url"));
 		 assertTrue(homepage.isAt());
 		 assertTrue(homepage.isAtUrl());
 		 homepage.login.click();
-		 homepage.userEmail.sendKeys("zmiakhel@gmail.com ");
-		 homepage.userPassword.sendKeys("Cyborg07");
+		 homepage.userEmail.sendKeys(ConfigurationReader.getProperty("username"));
+		 homepage.userPassword.sendKeys(ConfigurationReader.getProperty("password"));
 		 homepage.loginButton.click();
 		 assertTrue(homepage.dashboard.isDisplayed());
 		 homepage.sendKeyToSearchBox2();
@@ -101,11 +101,11 @@ public class SignUpTest extends TestBase{
 		 searchResult.changeWindow(driver);
 		 searchResult.titleContains();
 		 BrowserUtils.waitFor(2);
-//		 searchResult.requestStay.click();
-//		 BrowserUtils.waitFor(2);
-//		 searchResult.CongratulationDisplay();
-//		 searchResult.requestCenter.click();
-//		 searchResult.cancelButton.click();
+		 searchResult.requestStay.click();
+		 BrowserUtils.waitFor(2);
+		 searchResult.CongratulationDisplay();
+		 searchResult.requestCenter.click();
+		 searchResult.cancelButton.click();
 		 
 		 
 		 
