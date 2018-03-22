@@ -76,15 +76,14 @@ public class FunctionalTest extends TestBase {
 		//click on button "Next"
 		singUpPage.nextButton.click();
 		//profile-details
-		BrowserUtils.waitFor(3);
+	//	BrowserUtils.waitFor(3);
 		singUpPage.hostEmail.clear();
 		singUpPage.hostEmail.sendKeys(singUpPage.newRandomEmailAddress(singUpPage.newEmailAddress));
 		singUpPage.profileDetails(singUpPage.userPhoneNumber,
 				singUpPage.aboutMyself, singUpPage.userDoB);
 		//click save button
 		singUpPage.saveButton.click();
-		//check name is displayed
-		assertTrue(singUpPage.nameLink.isDisplayed());
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/profile-details");
 	}
 	//testCase#9SY2
 	@Test(priority = 2)
