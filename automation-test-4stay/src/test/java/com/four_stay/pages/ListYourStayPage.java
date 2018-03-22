@@ -65,16 +65,16 @@ public class ListYourStayPage {
 	public WebElement facebookpassword;
 	
 	public boolean isAtUrl() {
-		return driver.getCurrentUrl().equals("https://4stay.com/");
+		return driver.getCurrentUrl().equals("fourstay-staging.herokuapp.com/");
 	}
 
 	public String expectedHostUrl() {
 		return driver.getCurrentUrl();
 	}
-	public String actualHostUrl = "https://4stay.com/how-to-become-a-host";
+	public String actualHostUrl = "https://fourstay-staging.herokuapp.com/how-to-become-a-host";
 	
 //
-	public String profileDetailsPage = "https://4stay.com/sign-up#!/profile-details";
+	public String profileDetailsPage = "https://fourstay-staging.herokuapp.com/sign-up#!/profile-details";
 
 	public String currentUrl = Driver.getDriver().getCurrentUrl().toString();
 	
