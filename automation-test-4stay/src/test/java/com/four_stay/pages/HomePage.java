@@ -68,11 +68,11 @@ public class HomePage {
 	public WebElement close;
 
 	public void sendKeyToSearchBox() {
-		searchTab.sendKeys("Jones Branch Drive");
+		searchTab.sendKeys("Washington, DC, USA");
 	}
 	
 	public void sendKeyToSearchBox2() {
-		searchTab.sendKeys("Los Angeles");
+		searchTab.sendKeys("Washington, DC, USA");
 	}
 	
 	public void clickSearchBox() {
@@ -84,7 +84,7 @@ public class HomePage {
 	}
 
 	public boolean isAtUrl() {
-		return driver.getCurrentUrl().equals("https://4stay.com/");
+		return driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/");
 	}
 
 	public boolean forgotPasswordDisplay() {
