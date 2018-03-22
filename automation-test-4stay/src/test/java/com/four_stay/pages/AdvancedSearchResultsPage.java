@@ -22,11 +22,48 @@ public class AdvancedSearchResultsPage {
 	@FindBy (id="check-button")
 	public WebElement requestStay;
 	
+	
+	
 	@FindBy (css="a[class='dropdown-toggle']")
 	public WebElement dropDown;
 	
 	@FindBy(linkText="Log Out")
 	public WebElement logOut;
+	
+	@FindBy(xpath="//div[@class='logo animated fadeInDown ml-auto mr-auto']")
+	public WebElement logo;
+	
+	@FindBy(xpath="//*[@id=\"page-container\"]/div[2]/div/h2")
+	public WebElement congratulation;
+	
+	@FindBy(xpath="//a[@class='btn-outline-primary btn']")
+	public WebElement requestCenter;
+	
+	@FindBy(linkText="Cancel")
+	public WebElement cancelButton;
+	
+	public void CongratulationDisplay() {
+		congratulation.isDisplayed();
+		requestCenter.isDisplayed();
+	}
+	
+	
+	
+	
+	
+	
+	public boolean isAt() {
+		return driver.getTitle().contains("Los Angeles, CA, USA");
+	}
+	
+	public boolean isUrl() {
+		return driver.getCurrentUrl().contains("https://4stay.com/advanced_search");
+	}
+	
+	
+	public boolean titleContains() {
+		return driver.getTitle().contains(firstResult.getText());
+	}
 	
 	
 	public static void changeWindow(WebDriver driver) {

@@ -47,7 +47,7 @@ public class FunctionalTest extends TestBase {
 		assertTrue(singUpPage.continueEmailButton.isDisplayed());
 		
 		singUpPage.continueEmailButton.click();
-		
+		System.out.println();
 		//sign up field
 		singUpPage.completeUserForm(singUpPage.userfirstName, singUpPage.userlLastName,
 				singUpPage.newEmailAddress,singUpPage.newUserPassword );

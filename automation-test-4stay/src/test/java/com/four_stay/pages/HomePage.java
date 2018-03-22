@@ -68,9 +68,13 @@ public class HomePage {
 	public WebElement close;
 
 	public void sendKeyToSearchBox() {
-		searchTab.sendKeys("Jones Branch Dr, Tysons");
+		searchTab.sendKeys("Jones Branch Drive");
 	}
-
+	
+	public void sendKeyToSearchBox2() {
+		searchTab.sendKeys("Los Angeles");
+	}
+	
 	public void clickSearchBox() {
 		searchTab.click();
 	}
