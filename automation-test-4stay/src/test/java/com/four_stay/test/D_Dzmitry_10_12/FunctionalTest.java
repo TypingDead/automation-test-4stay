@@ -30,7 +30,7 @@ public class FunctionalTest extends TestBase {
 
 	}
 	//testCase#12
-	@Test(priority = 1, description = "First test case TC012")
+	@Test(priority = 1, description = " test case TC012")
 	public void signUpTest() throws InterruptedException {
 		SignUpPage singUpPage = new SignUpPage();
 		singUpPage.navigateToSingUpPage();
