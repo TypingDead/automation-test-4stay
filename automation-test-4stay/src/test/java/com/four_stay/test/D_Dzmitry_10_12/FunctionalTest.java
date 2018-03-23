@@ -17,7 +17,7 @@ import com.four_stay.utilities.TestBase;
 
 public class FunctionalTest extends TestBase {
 	//testCase#11
-	@Test(priority = 0, description = "First test case TC011")
+	//@Test(priority = 0, description = "First test case TC011")
 	public void TC011() {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
@@ -39,7 +39,7 @@ public class FunctionalTest extends TestBase {
 		advancedSearchPage.logOut.click();
 	}
 	//testCase#12
-	//@Test( description = " test case TC012")
+	@Test( description = " test case TC012")
 	public void TC012() throws InterruptedException {
 		SignUpPage singUpPage = new SignUpPage();
 		singUpPage.navigateToSingUpPage();

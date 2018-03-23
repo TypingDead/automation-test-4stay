@@ -2,16 +2,11 @@ package com.four_stay.test;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.AdvancedSearchResultsPage;
-import com.four_stay.pages.HomePage;
 import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
@@ -73,12 +68,9 @@ public class ListYourStayTest extends TestBase {
 
 	}
 	
-	@Test(priority = 0, description = "First test case TC011")
+	@Test(priority = 0, description = "Sing in through List Your Stay")
 	public void TC011() {
-
 		
-		ListYourStayPage listYourStayPage = new ListYourStayPage();
-		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url1"));
 		listYourStayPage.logOut();
