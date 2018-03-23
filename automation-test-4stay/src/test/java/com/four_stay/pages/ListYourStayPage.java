@@ -67,6 +67,19 @@ public class ListYourStayPage {
 	@FindBy(xpath="(//button[@class='close'])[2]")
 	public WebElement close;
 	
+	@FindBy(linkText="LOG OUT")
+	public WebElement logOut;
+	
+	public void logOut() {
+		try {
+			if(logOut.isDisplayed()) {
+				logOut.click();
+			}
+		} catch (Exception e) {
+			System.out.println("Its not logged in");
+		}
+	}
+	
 	public boolean isAtUrl() {
 		return driver.getCurrentUrl().equals("fourstay-staging.herokuapp.com/");
 	}

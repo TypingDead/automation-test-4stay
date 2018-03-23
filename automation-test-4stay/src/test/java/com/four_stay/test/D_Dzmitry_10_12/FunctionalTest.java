@@ -24,6 +24,7 @@ public class FunctionalTest extends TestBase {
 		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url1"));
+		
 		listYourStayPage.listYourStayButton.click();
 		listYourStayPage.loginHereLink.click();
 		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));

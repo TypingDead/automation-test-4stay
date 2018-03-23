@@ -55,7 +55,7 @@ public class ListYourStayTest extends TestBase {
 
 	}
 
-	//@Test(description = "List Your Stay using valid facebook account")
+	@Test(description = "List Your Stay using valid facebook account")
 	public void TC009() {
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url1"));
@@ -73,13 +73,15 @@ public class ListYourStayTest extends TestBase {
 
 	}
 	
-	//@Test(priority = 0, description = "First test case TC011")
+	@Test(priority = 0, description = "First test case TC011")
 	public void TC011() {
 
+		
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
 		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url1"));
+		listYourStayPage.logOut();
 		listYourStayPage.listYourStayButton.click();
 		listYourStayPage.loginHereLink.click();
 		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
@@ -87,11 +89,11 @@ public class ListYourStayTest extends TestBase {
 		listYourStayPage.loginButton.click();
 
 		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-		listYourStayPage.close.click();
-		driver.navigate().refresh();
-		listYourStayPage.close.click();
-		advancedSearchPage.dropDown.click();
-		advancedSearchPage.logOut.click();
+//		listYourStayPage.close.click();
+//		driver.navigate().refresh();
+//		listYourStayPage.close.click();
+//		advancedSearchPage.dropDown.click();
+//		advancedSearchPage.logOut.click();
 
 	}
 
