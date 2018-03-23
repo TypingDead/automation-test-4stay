@@ -68,7 +68,7 @@ public class SignUpTest extends TestBase{
 		 assertTrue(searchResult.isAt());
 		 assertTrue(searchResult.isUrl());
 		 searchResult.firstResult.click();
-		 searchResult.changeWindow(driver);
+		 AdvancedSearchResultsPage.changeWindow(driver);
 		 searchResult.titleContains();
 		 BrowserUtils.waitFor(2);
 		 searchResult.requestStay.click();
@@ -78,7 +78,7 @@ public class SignUpTest extends TestBase{
 	 }
 	 
 	 
-	// @Test(priority = 3, description = "test case TC012 From different test case")
+	 @Test(priority = 3, description = "test case TC012 From different test case")
 	 public void testCase12() {
 		 Actions action = new Actions(driver);
 		 driver.get(ConfigurationReader.getProperty("url"));
@@ -98,7 +98,7 @@ public class SignUpTest extends TestBase{
 		 assertTrue(searchResult.isAt());
 		 assertTrue(searchResult.isUrl());
 		 searchResult.firstResult.click();
-		 searchResult.changeWindow(driver);
+		 AdvancedSearchResultsPage.changeWindow(driver);
 		 searchResult.titleContains();
 		 BrowserUtils.waitFor(2);
 		 searchResult.requestStay.click();
