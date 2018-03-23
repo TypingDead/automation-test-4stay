@@ -1,7 +1,8 @@
-package com.four_stay.test.C_Alex_7_9;
+package com.four_stay.test;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.four_stay.pages.AdvancedSearchResultsPage;
 import com.four_stay.pages.HomePage;
 import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
@@ -22,17 +24,17 @@ import com.four_stay.utilities.TestBase;
  * @author Rodriguez HomeTest Beta_4Stay
  *
  */
-public class FunctionalTest extends TestBase {
+public class ListYourStayTest extends TestBase {
 
-	WebDriverWait wait;
-	HomePage homepage = new HomePage();
+	WebDriverWait wait;	
 	ListYourStayPage listYourStayPage = new ListYourStayPage();
 	SignUpPage signup = new SignUpPage();
 
 
-	@Test(description = "First test case TC008")
-	public void test008() {
+	@Test(description = "List Your Stay by creating new account using valid test data")
+	public void TC008() {
 		driver = Driver.getDriver();
+		driver.get(ConfigurationReader.getProperty("url"));
 
 		listYourStayPage.listYourStayButton.click();
 
@@ -53,20 +55,43 @@ public class FunctionalTest extends TestBase {
 
 	}
 
-	@Test(description = "First test case TC009")
-	public void test009() {
-		driver.get(ConfigurationReader.getProperty("url"));
-		signup.logOut.click();
+	//@Test(description = "List Your Stay using valid facebook account")
+	public void TC009() {
+		driver = Driver.getDriver();
+		driver.get(ConfigurationReader.getProperty("url1"));
+		
 		listYourStayPage.isAtUrl();
 		listYourStayPage.listYourStayButton.click();
-		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrl);
-
+		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrlFB);
+	
 		listYourStayPage.facebookSignup.click();
 		listYourStayPage.facebookEmail.sendKeys("5715337976");
 		listYourStayPage.facebookpassword.sendKeys("123Typing" + Keys.ENTER);
 
 		BrowserUtils.waitFor(3);
-		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.profileDetailsPage);
+		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.profileDetailsPageFB);
+
+	}
+	
+	//@Test(priority = 0, description = "First test case TC011")
+	public void TC011() {
+
+		ListYourStayPage listYourStayPage = new ListYourStayPage();
+		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
+		driver = Driver.getDriver();
+		driver.get(ConfigurationReader.getProperty("url1"));
+		listYourStayPage.listYourStayButton.click();
+		listYourStayPage.loginHereLink.click();
+		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
+		listYourStayPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+		listYourStayPage.loginButton.click();
+
+		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
+		listYourStayPage.close.click();
+		driver.navigate().refresh();
+		listYourStayPage.close.click();
+		advancedSearchPage.dropDown.click();
+		advancedSearchPage.logOut.click();
 
 	}
 

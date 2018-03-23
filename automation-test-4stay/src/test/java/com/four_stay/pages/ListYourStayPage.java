@@ -64,6 +64,9 @@ public class ListYourStayPage {
 	@FindBy(xpath="(//div[@class='clearfix form_row'])[2]//input")
 	public WebElement facebookpassword;
 	
+	@FindBy(xpath="(//button[@class='close'])[2]")
+	public WebElement close;
+	
 	public boolean isAtUrl() {
 		return driver.getCurrentUrl().equals("fourstay-staging.herokuapp.com/");
 	}
@@ -71,10 +74,12 @@ public class ListYourStayPage {
 	public String expectedHostUrl() {
 		return driver.getCurrentUrl();
 	}
+	
+	public String actualHostUrlFB = "https://4stay.com/how-to-become-a-host";
 	public String actualHostUrl = "https://fourstay-staging.herokuapp.com/how-to-become-a-host";
 	
-//
 	public String profileDetailsPage = "https://fourstay-staging.herokuapp.com/sign-up#!/profile-details";
+	public String profileDetailsPageFB = "https://4stay.com/sign-up#!/profile-details";
 
 	public String currentUrl = Driver.getDriver().getCurrentUrl().toString();
 	

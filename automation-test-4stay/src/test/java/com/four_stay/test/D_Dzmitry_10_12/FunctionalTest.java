@@ -6,6 +6,7 @@ import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.four_stay.pages.AdvancedSearchResultsPage;
 import com.four_stay.pages.HomePage;
 import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
@@ -17,9 +18,12 @@ import com.four_stay.utilities.TestBase;
 public class FunctionalTest extends TestBase {
 	//testCase#11
 	@Test(priority = 0, description = "First test case TC011")
-	public void test() throws InterruptedException {
+	public void TC011() {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
+		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
+		driver = Driver.getDriver();
+		driver.get(ConfigurationReader.getProperty("url1"));
 		listYourStayPage.listYourStayButton.click();
 		listYourStayPage.loginHereLink.click();
 		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
@@ -27,11 +31,15 @@ public class FunctionalTest extends TestBase {
 		listYourStayPage.loginButton.click();
 
 		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-
+		listYourStayPage.close.click();
+		driver.navigate().refresh();
+		listYourStayPage.close.click();
+		advancedSearchPage.dropDown.click();
+		advancedSearchPage.logOut.click();
 	}
 	//testCase#12
-	@Test(priority = 1, description = " test case TC012")
-	public void signUpTest() throws InterruptedException {
+	//@Test( description = " test case TC012")
+	public void TC012() throws InterruptedException {
 		SignUpPage singUpPage = new SignUpPage();
 		singUpPage.navigateToSingUpPage();
 		BrowserUtils.waitFor(3);
@@ -81,7 +89,7 @@ public class FunctionalTest extends TestBase {
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/profile-details");
 	}
 	//testCase#9SY2
-	@Test(priority = 2, description = "test case 9 from other test cases SY2")
+	//@Test(priority = 2, description = "test case 9 from other test cases SY2")
 	public void searshFunctionalityNegativeTest() {
 		
 		HomePage homePage = new HomePage();
