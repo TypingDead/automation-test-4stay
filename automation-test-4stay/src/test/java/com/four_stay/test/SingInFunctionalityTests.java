@@ -38,7 +38,7 @@ public class SingInFunctionalityTests extends TestBase {
 	public void TC002() {
 				
 		driver.get(ConfigurationReader.getProperty("url"));
-		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
 		homepage.login.click();
 		assertTrue(homepage.logo.isDisplayed());
@@ -70,7 +70,7 @@ public class SingInFunctionalityTests extends TestBase {
 	public void TC004() {
 		
 		driver.get(ConfigurationReader.getProperty("url"));
-		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
 		homepage.login.click();
 		assertTrue(homepage.logo.isDisplayed());
@@ -85,7 +85,7 @@ public class SingInFunctionalityTests extends TestBase {
 	public void TC005() {
 				
 		driver.get(ConfigurationReader.getProperty("url"));
-		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
 		homepage.login.click();
 		assertTrue(homepage.logo.isDisplayed());
@@ -100,7 +100,7 @@ public class SingInFunctionalityTests extends TestBase {
 		
 		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url"));
-		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
+		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
 		Thread.sleep(2000);
 		homepage.login.click();
