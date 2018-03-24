@@ -40,6 +40,8 @@ public class SignUpTest extends TestBase{
 	 @Test(priority = 1, description = "test case TC019")
 	 public void testCase19() throws InterruptedException {
 		 Actions action = new Actions(driver);
+		 assertTrue(homepage.isAt());
+		assertTrue(homepage.isAtUrl());
 		homepage.sendKeyToSearchBox();
 		BrowserUtils.waitFor(2);
 		action.sendKeys(Keys.ARROW_DOWN).perform();
@@ -100,12 +102,12 @@ public class SignUpTest extends TestBase{
 		 searchResult.firstResult.click();
 		 AdvancedSearchResultsPage.changeWindow(driver);
 		 searchResult.titleContains();
-		 BrowserUtils.waitFor(2);
-		 searchResult.requestStay.click();
-		 BrowserUtils.waitFor(2);
-		 searchResult.CongratulationDisplay();
-		 searchResult.requestCenter.click();
-		 searchResult.cancelButton.click();
+		// BrowserUtils.waitFor(2);
+		// searchResult.requestStay.click();
+		// BrowserUtils.waitFor(2);
+		// searchResult.CongratulationDisplay();
+		// searchResult.requestCenter.click();
+		// searchResult.cancelButton.click();
 		 
 		 
 		 

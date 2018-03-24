@@ -84,7 +84,7 @@ public class HomePage {
 	}
 
 	public boolean isAtUrl() {
-		return driver.getCurrentUrl().equals("https://fourstay-staging.herokuapp.com/");
+		return driver.getCurrentUrl().equals("https://4stay.com/");
 	}
 
 	public boolean forgotPasswordDisplay() {

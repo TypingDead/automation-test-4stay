@@ -57,7 +57,7 @@ public class AdvancedSearchResultsPage {
 	}
 	
 	public boolean isUrl() {
-		return driver.getCurrentUrl().contains("https://fourstay-staging.herokuapp.com/advanced_search");
+		return driver.getCurrentUrl().contains("https://4stay.com/advanced_search");
 	}
 	
 	
