@@ -55,7 +55,7 @@ public class AdvancedSearchResultsPage {
 	public boolean isAt() {
 		return driver.getTitle().contains("Washington, DC, USA");
 	}
-	
+	  
 	public boolean isUrl() {
 		return driver.getCurrentUrl().contains("https://4stay.com/advanced_search");
 	}
