@@ -88,11 +88,12 @@ public class ListYourStayPage {
 		return driver.getCurrentUrl();
 	}
 	
-	public String actualHostUrlFB = "https://4stay.com/how-to-become-a-host";
-	public String actualHostUrl = "https://fourstay-staging.herokuapp.com/how-to-become-a-host";
 	
-	public String profileDetailsPage = "https://fourstay-staging.herokuapp.com/sign-up#!/profile-details";
-	public String profileDetailsPageFB = "https://4stay.com/sign-up#!/profile-details";
+	public String actualHostUrl = "https://4stay.com/how-to-become-a-host";
+	public String actualHostUrl1 = "https://4stay.com/dashboard/stays/new";
+	
+	
+	public String profileDetailsPage = "https://4stay.com/sign-up#!/profile-details";
 
 	public String currentUrl = Driver.getDriver().getCurrentUrl().toString();
 	

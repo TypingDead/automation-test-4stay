@@ -54,7 +54,7 @@ public class ListYourStayTest extends TestBase {
 	public void TC009() {
 		
 		driver.get(ConfigurationReader.getProperty("url"));
-		
+		listYourStayPage.logOut();
 		listYourStayPage.isAtUrl();
 		listYourStayPage.listYourStayButton.click();
 		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrl);
@@ -82,11 +82,11 @@ public class ListYourStayTest extends TestBase {
 		listYourStayPage.loginButton.click();
 
 		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-		listYourStayPage.close.click();
-		driver.navigate().refresh();
-		listYourStayPage.close.click();
-		advancedSearchPage.dropDown.click();
-		advancedSearchPage.logOut.click();
+//		listYourStayPage.close.click();
+//		driver.navigate().refresh();
+//		listYourStayPage.close.click();
+//		advancedSearchPage.dropDown.click();
+//		advancedSearchPage.logOut.click();
 	}
 	
 

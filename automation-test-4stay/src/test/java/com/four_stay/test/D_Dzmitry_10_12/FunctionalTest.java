@@ -22,7 +22,7 @@ public class FunctionalTest extends TestBase {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
 		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
-		driver.get(ConfigurationReader.getProperty("url1"));
+		driver.get(ConfigurationReader.getProperty("url"));
 		
 		listYourStayPage.listYourStayButton.click();
 		listYourStayPage.loginHereLink.click();
@@ -31,11 +31,11 @@ public class FunctionalTest extends TestBase {
 		listYourStayPage.loginButton.click();
 
 		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-		listYourStayPage.close.click();
-		driver.navigate().refresh();
-		listYourStayPage.close.click();
-		advancedSearchPage.dropDown.click();
-		advancedSearchPage.logOut.click();
+//		listYourStayPage.close.click();
+//		driver.navigate().refresh();
+//		listYourStayPage.close.click();
+//		advancedSearchPage.dropDown.click();
+//		advancedSearchPage.logOut.click();
 	}
 	
 	//testCase#12
