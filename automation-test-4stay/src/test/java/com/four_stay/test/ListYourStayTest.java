@@ -28,7 +28,7 @@ public class ListYourStayTest extends TestBase {
 
 	@Test(description = "List Your Stay by creating new account using valid test data")
 	public void TC008() {
-		driver = Driver.getDriver();
+	
 		driver.get(ConfigurationReader.getProperty("url"));
 
 		listYourStayPage.listYourStayButton.click();
@@ -52,7 +52,7 @@ public class ListYourStayTest extends TestBase {
 
 	@Test(description = "List Your Stay using valid facebook account")
 	public void TC009() {
-		driver = Driver.getDriver();
+		
 		driver.get(ConfigurationReader.getProperty("url1"));
 		
 		listYourStayPage.isAtUrl();

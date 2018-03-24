@@ -22,7 +22,6 @@ public class FunctionalTest extends TestBase {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
 		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
-		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url1"));
 		
 		listYourStayPage.listYourStayButton.click();
@@ -38,6 +37,7 @@ public class FunctionalTest extends TestBase {
 		advancedSearchPage.dropDown.click();
 		advancedSearchPage.logOut.click();
 	}
+	
 	//testCase#12
 	@Test( description = " test case TC012")
 	public void TC012() throws InterruptedException {

@@ -17,7 +17,6 @@ import com.four_stay.utilities.TestBase;
 public class SignUpFunctionalityTest extends TestBase {
 
 	SignUpPage signUpPage = new SignUpPage();
-	WebDriver driver;
 	WebDriverWait wait;
 
 	@Test( description = "Sign Up: Positive Path")
@@ -73,7 +72,6 @@ public class SignUpFunctionalityTest extends TestBase {
 	@Test(description = "Sign Up: Negative Path")
 	public void TC013() throws InterruptedException {
 
-		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
@@ -105,7 +103,6 @@ public class SignUpFunctionalityTest extends TestBase {
 	@Test(description = "Sign Up: Negative Path Incorrect Phone Number")
 	public void TC014() {
 
-		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
@@ -139,7 +136,6 @@ public class SignUpFunctionalityTest extends TestBase {
 	@Test(description = "Sign Up: Negative Path Incorrect Year")
 	public void TC015() {
 
-		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));

@@ -17,12 +17,12 @@ import com.four_stay.utilities.TestBase;
 public class SingInFunctionalityTests extends TestBase {
 
 	HomePage homepage = new HomePage();
-	WebDriver driver;
+	
 	WebDriverWait wait;
 
 	@Test( description = "Sign in with valid test data")
 	public void TC001() {
-		driver = Driver.getDriver();
+		
 		driver.get(ConfigurationReader.getProperty("url1"));
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
@@ -38,8 +38,7 @@ public class SingInFunctionalityTests extends TestBase {
 
 	@Test( description = "Sign in with invalid email & valid password")
 	public void TC002() {
-		
-		driver = Driver.getDriver();
+				
 		driver.get(ConfigurationReader.getProperty("url"));
 		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		assertTrue(homepage.login.isDisplayed());
@@ -72,7 +71,6 @@ public class SingInFunctionalityTests extends TestBase {
 	@Test(description = "Sign in with no email & valid password")
 	public void TC004() {
 		
-		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url"));
 		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		assertTrue(homepage.login.isDisplayed());
@@ -87,8 +85,7 @@ public class SingInFunctionalityTests extends TestBase {
 
 	@Test(description = "Sign in with no test data")
 	public void TC005() {
-		
-		driver = Driver.getDriver();
+				
 		driver.get(ConfigurationReader.getProperty("url"));
 		assertEquals(driver.getCurrentUrl(), "https://fourstay-staging.herokuapp.com/");
 		assertTrue(homepage.login.isDisplayed());
@@ -120,7 +117,6 @@ public class SingInFunctionalityTests extends TestBase {
 	@Test(description = "Reset Password functionality on Sing in page")
 	public void TC007() {
 
-		driver = Driver.getDriver();
 		driver.get(ConfigurationReader.getProperty("url"));
 		homepage.isAtUrl();
 		assertTrue(homepage.login.isDisplayed());
