@@ -17,7 +17,7 @@ import com.four_stay.utilities.TestBase;
 
 public class FunctionalTest extends TestBase {
 	//testCase#11
-	//@Test(priority = 0, description = "First test case TC011")
+	@Test(description = "First test case TC011")
 	public void TC011() {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();

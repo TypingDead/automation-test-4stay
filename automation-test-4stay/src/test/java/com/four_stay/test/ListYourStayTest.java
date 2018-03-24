@@ -68,25 +68,5 @@ public class ListYourStayTest extends TestBase {
 
 	}
 	
-	@Test(priority = 0, description = "Sing in through List Your Stay")
-	public void TC011() {
-		
-		driver = Driver.getDriver();
-		driver.get(ConfigurationReader.getProperty("url1"));
-		listYourStayPage.logOut();
-		listYourStayPage.listYourStayButton.click();
-		listYourStayPage.loginHereLink.click();
-		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
-		listYourStayPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
-		listYourStayPage.loginButton.click();
-
-		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-//		listYourStayPage.close.click();
-//		driver.navigate().refresh();
-//		listYourStayPage.close.click();
-//		advancedSearchPage.dropDown.click();
-//		advancedSearchPage.logOut.click();
-
-	}
 
 }
