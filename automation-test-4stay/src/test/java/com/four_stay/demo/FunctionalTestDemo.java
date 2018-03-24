@@ -1,4 +1,4 @@
-package com.four_stay.test.E_Elvira_13_15;
+package com.four_stay.demo;
 
 import static org.testng.Assert.assertTrue;
 

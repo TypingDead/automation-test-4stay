@@ -1,4 +1,4 @@
-package com.four_stay.test.E_Elvira_13_15;
+package com.four_stay.test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -17,62 +17,45 @@ import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
 import com.four_stay.utilities.TestBase;
 
-public class SmokeTestDemo extends TestBase {
+public class SmokeTest extends TestBase {
 
 	HomePage homepage = new HomePage();
 	AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
-	WebDriver driver;
 	WebDriverWait wait;
 
 	@Test
-	public void smokeTest()  {
-		driver = Driver.getDriver();
+	public void smokeTest() throws InterruptedException {
+		
 		driver.get(ConfigurationReader.getProperty("url"));
-		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, 5);
 
 		assertEquals(driver.getTitle(), "Room rental, roommate finder, off-campus housing, homestay | 4stay");
-		BrowserUtils.highlightAreaWithJavascript(homepage.login);
 		homepage.login.click();
 
 		wait.until(ExpectedConditions.visibilityOf(homepage.userEmail));
 		assertTrue(homepage.login.isDisplayed());
 
-		BrowserUtils.highLighterBackground(homepage.userEmail);
 		homepage.userEmail.sendKeys(ConfigurationReader.getProperty("username"));
-		
-		BrowserUtils.highLighterBackground(homepage.userPassword);
 		homepage.userPassword.sendKeys(ConfigurationReader.getProperty("password"));
-		
-		BrowserUtils.highlightAreaWithJavascript(homepage.loginButton);
 		homepage.loginButton.click();
 
-		BrowserUtils.waitFor(2);
+		Thread.sleep(5000);
 
 		// wait.until(ExpectedConditions.visibilityOf(homepage.searchTab));
-		BrowserUtils.highlightAreaWithJavascript(homepage.dashboard);
 		assertTrue(homepage.dashboard.isDisplayed());
-		
-		BrowserUtils.highLighterBackground(homepage.searchTab);
 		homepage.searchTab.sendKeys("Locust St, Pittsburgh, PA, USA");
-		BrowserUtils.waitFor(2);
+		Thread.sleep(2000);
 		homepage.searchTab.sendKeys(Keys.DOWN);
 		homepage.searchTab.sendKeys(Keys.ENTER);
-		BrowserUtils.waitFor(2);
-		BrowserUtils.highlightAreaWithJavascript(homepage.searchButton);
+		Thread.sleep(2000);
 		homepage.searchButton.click();
 
 		assertEquals(driver.getTitle(),
 				"Advanced searchLocust St, Pittsburgh, PA, USA stays | Room rental, roommate finder, off-campus housing, homestay | 4stay");
-		BrowserUtils.highlightAreaWithJavascript(advancedSearchPage.firstResult);
 		advancedSearchPage.firstResult.click();
 		AdvancedSearchResultsPage.changeWindow(driver);
-		// advancedSearchPage.requestStay.click();
 
-		BrowserUtils.highlightAreaWithJavascript(advancedSearchPage.dropDown);
 		advancedSearchPage.dropDown.click();
-		
-		BrowserUtils.highlightAreaWithJavascript(advancedSearchPage.logOut);
 		advancedSearchPage.logOut.click();
 		
 

@@ -1,4 +1,4 @@
-package com.four_stay.test.E_Elvira_13_15;
+package com.four_stay.test;
 
 import static org.testng.Assert.assertTrue;
 
@@ -13,7 +13,7 @@ import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
 import com.four_stay.utilities.TestBase;
 
-public class FunctionalTest extends TestBase {
+public class SignUpFunctionalityTests extends TestBase {
 
 	SignUpPage signUpPage = new SignUpPage();
 	WebDriver driver;

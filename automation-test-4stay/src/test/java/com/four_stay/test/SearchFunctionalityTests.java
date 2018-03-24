@@ -1,4 +1,4 @@
-package com.four_stay.test.F_Parhat_16_19;
+package com.four_stay.test;
 
  import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -17,7 +17,7 @@ import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.TestBase;
 
-public class SignUpTest extends TestBase{
+public class SearchFunctionalityTests extends TestBase{
 		
 	
 	 HomePage homepage = new HomePage();

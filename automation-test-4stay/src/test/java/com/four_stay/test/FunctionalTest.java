@@ -1,4 +1,4 @@
-package com.four_stay.test.D_Dzmitry_10_12;
+package com.four_stay.test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -90,7 +90,7 @@ public class FunctionalTest extends TestBase {
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/profile-details");
 	}
 	//testCase#9SY2
-	//@Test(priority = 2, description = "test case 9 from other test cases SY2")
+	@Test( description = "test case 9 from other test cases SY2")
 	public void searshFunctionalityNegativeTest() {
 		
 		HomePage homePage = new HomePage();

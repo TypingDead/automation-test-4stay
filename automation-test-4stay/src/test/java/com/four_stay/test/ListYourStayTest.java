@@ -21,14 +21,13 @@ import com.four_stay.utilities.TestBase;
  */
 public class ListYourStayTest extends TestBase {
 
-	WebDriverWait wait;	
+	WebDriverWait wait;
 	ListYourStayPage listYourStayPage = new ListYourStayPage();
 	SignUpPage signup = new SignUpPage();
 
-
 	@Test(description = "List Your Stay by creating new account using valid test data")
 	public void TC008() {
-	
+
 		driver.get(ConfigurationReader.getProperty("url"));
 
 		listYourStayPage.listYourStayButton.click();
@@ -52,13 +51,13 @@ public class ListYourStayTest extends TestBase {
 
 	@Test(description = "List Your Stay using valid facebook account")
 	public void TC009() {
-		
+
 		driver.get(ConfigurationReader.getProperty("url"));
 		listYourStayPage.logOut();
 		listYourStayPage.isAtUrl();
 		listYourStayPage.listYourStayButton.click();
 		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrl);
-	
+
 		listYourStayPage.facebookSignup.click();
 		listYourStayPage.facebookEmail.sendKeys("5715337976");
 		listYourStayPage.facebookpassword.sendKeys("123Typing" + Keys.ENTER);
@@ -67,27 +66,6 @@ public class ListYourStayTest extends TestBase {
 		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.profileDetailsPage);
 
 	}
-	
-	@Test(description = "First test case TC011")
-	public void TC011() {
 
-		ListYourStayPage listYourStayPage = new ListYourStayPage();
-		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
-		driver.get(ConfigurationReader.getProperty("url"));
-		listYourStayPage.logOut();
-		listYourStayPage.listYourStayButton.click();
-		listYourStayPage.loginHereLink.click();
-		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
-		listYourStayPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
-		listYourStayPage.loginButton.click();
-
-		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-//		listYourStayPage.close.click();
-//		driver.navigate().refresh();
-//		listYourStayPage.close.click();
-//		advancedSearchPage.dropDown.click();
-//		advancedSearchPage.logOut.click();
-	}
-	
 
 }
