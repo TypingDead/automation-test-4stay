@@ -3,7 +3,6 @@ package com.four_stay.test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -23,7 +22,6 @@ public class SingInFunctionalityTests extends TestBase {
 	@Test( description = "Sign in with valid test data")
 	public void TC001() {
 		
-		driver.get(ConfigurationReader.getProperty("url1"));
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
 		homepage.login.click();
@@ -55,7 +53,7 @@ public class SingInFunctionalityTests extends TestBase {
 	public void TC003() throws InterruptedException {
 		
 		driver = Driver.getDriver();
-		driver.get(ConfigurationReader.getProperty("url1"));
+		driver.get(ConfigurationReader.getProperty("url"));
 		assertEquals(driver.getCurrentUrl(), "https://4stay.com/");
 		assertTrue(homepage.login.isDisplayed());
 		Thread.sleep(2000);

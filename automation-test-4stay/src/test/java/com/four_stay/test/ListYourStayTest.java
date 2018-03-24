@@ -11,7 +11,6 @@ import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
-import com.four_stay.utilities.Driver;
 import com.four_stay.utilities.TestBase;
 
 /**
@@ -53,7 +52,7 @@ public class ListYourStayTest extends TestBase {
 	@Test(description = "List Your Stay using valid facebook account")
 	public void TC009() {
 		
-		driver.get(ConfigurationReader.getProperty("url1"));
+		driver.get(ConfigurationReader.getProperty("url"));
 		
 		listYourStayPage.isAtUrl();
 		listYourStayPage.listYourStayButton.click();
@@ -66,6 +65,26 @@ public class ListYourStayTest extends TestBase {
 		BrowserUtils.waitFor(3);
 		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.profileDetailsPageFB);
 
+	}
+	
+	@Test(description = "First test case TC011")
+	public void TC011() {
+
+		ListYourStayPage listYourStayPage = new ListYourStayPage();
+		driver.get(ConfigurationReader.getProperty("url"));
+		listYourStayPage.logOut();
+		listYourStayPage.listYourStayButton.click();
+		listYourStayPage.loginHereLink.click();
+		listYourStayPage.emailAddressBox.sendKeys(ConfigurationReader.getProperty("username"));
+		listYourStayPage.passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+		listYourStayPage.loginButton.click();
+
+		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
+//		listYourStayPage.close.click();
+//		driver.navigate().refresh();
+//		listYourStayPage.close.click();
+//		advancedSearchPage.dropDown.click();
+//		advancedSearchPage.logOut.click();
 	}
 	
 
