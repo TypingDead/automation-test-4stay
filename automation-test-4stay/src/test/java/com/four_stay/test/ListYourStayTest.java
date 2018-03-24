@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.four_stay.pages.AdvancedSearchResultsPage;
 import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
@@ -56,14 +57,14 @@ public class ListYourStayTest extends TestBase {
 		
 		listYourStayPage.isAtUrl();
 		listYourStayPage.listYourStayButton.click();
-		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrlFB);
+		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.actualHostUrl);
 	
 		listYourStayPage.facebookSignup.click();
 		listYourStayPage.facebookEmail.sendKeys("5715337976");
 		listYourStayPage.facebookpassword.sendKeys("123Typing" + Keys.ENTER);
 
 		BrowserUtils.waitFor(3);
-		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.profileDetailsPageFB);
+		assertEquals(listYourStayPage.expectedHostUrl(), listYourStayPage.profileDetailsPage);
 
 	}
 	
@@ -71,6 +72,7 @@ public class ListYourStayTest extends TestBase {
 	public void TC011() {
 
 		ListYourStayPage listYourStayPage = new ListYourStayPage();
+		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
 		driver.get(ConfigurationReader.getProperty("url"));
 		listYourStayPage.logOut();
 		listYourStayPage.listYourStayButton.click();
@@ -80,11 +82,11 @@ public class ListYourStayTest extends TestBase {
 		listYourStayPage.loginButton.click();
 
 		Assert.assertNotEquals(listYourStayPage.currentUrl, listYourStayPage.profileDetailsPage);
-//		listYourStayPage.close.click();
-//		driver.navigate().refresh();
-//		listYourStayPage.close.click();
-//		advancedSearchPage.dropDown.click();
-//		advancedSearchPage.logOut.click();
+		listYourStayPage.close.click();
+		driver.navigate().refresh();
+		listYourStayPage.close.click();
+		advancedSearchPage.dropDown.click();
+		advancedSearchPage.logOut.click();
 	}
 	
 
