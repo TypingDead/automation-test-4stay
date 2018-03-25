@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Test" verbose="2">
+	<test name="Automated tests">
+		<classes>
+			<class name="com.four_stay.test.SingInFunctionalityTests"></class>
+			<class name="com.four_stay.test.ListYourStayTest"></class>
+			<class name="com.four_stay.test.SignUpFunctionalityTests"></class>
+			<class name="com.four_stay.test.SearchFunctionalityTests"></class>		
+			<class name="com.four_stay.test.FunctionalTest"></class>
+		</classes>
+	</test>
+</suite>
