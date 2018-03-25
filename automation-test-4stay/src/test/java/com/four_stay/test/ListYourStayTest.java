@@ -12,6 +12,7 @@ import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
+import com.four_stay.utilities.Driver;
 import com.four_stay.utilities.TestBase;
 
 /**
@@ -22,17 +23,18 @@ import com.four_stay.utilities.TestBase;
 public class ListYourStayTest extends TestBase {
 
 	WebDriverWait wait;
-	ListYourStayPage listYourStayPage = new ListYourStayPage();
-	SignUpPage signup = new SignUpPage();
+//	ListYourStayPage listYourStayPage = new ListYourStayPage();
+//	SignUpPage signup = new SignUpPage();
 
 	@Test(description = "List Your Stay by creating new account using valid test data")
 	public void TC008() {
 
-		driver.get(ConfigurationReader.getProperty("url"));
-
+//		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+//		driverLaunch(ConfigurationReader.getProperty("url"));
+		
 		listYourStayPage.listYourStayButton.click();
 
-		String current = driver.getCurrentUrl();
+		String current = Driver.getDriver().getCurrentUrl();
 		Assert.assertEquals(current, listYourStayPage.actualHostUrl);
 
 		listYourStayPage.firstName.sendKeys("Alex");
@@ -44,7 +46,7 @@ public class ListYourStayTest extends TestBase {
 		listYourStayPage.checkBox();
 		listYourStayPage.phoneNumber.sendKeys("11" + Keys.ENTER);
 		BrowserUtils.waitFor(5);
-		String current1 = driver.getCurrentUrl();
+		String current1 = Driver.getDriver().getCurrentUrl();
 		Assert.assertEquals(current1, listYourStayPage.profileDetailsPage);
 
 	}
@@ -52,7 +54,7 @@ public class ListYourStayTest extends TestBase {
 	@Test(description = "List Your Stay using valid facebook account")
 	public void TC009() {
 
-		driver.get(ConfigurationReader.getProperty("url"));
+		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 		listYourStayPage.logOut();
 		listYourStayPage.isAtUrl();
 		listYourStayPage.listYourStayButton.click();

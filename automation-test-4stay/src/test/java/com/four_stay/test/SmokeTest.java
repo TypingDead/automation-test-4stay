@@ -26,10 +26,10 @@ public class SmokeTest extends TestBase {
 	@Test
 	public void smokeTest() throws InterruptedException {
 		
-		driver.get(ConfigurationReader.getProperty("url"));
-		wait = new WebDriverWait(driver, 5);
+		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+		wait = new WebDriverWait(Driver.getDriver(), 5);
 
-		assertEquals(driver.getTitle(), "Room rental, roommate finder, off-campus housing, homestay | 4stay");
+		assertEquals(Driver.getDriver().getTitle(), "Room rental, roommate finder, off-campus housing, homestay | 4stay");
 		homepage.login.click();
 
 		wait.until(ExpectedConditions.visibilityOf(homepage.userEmail));
@@ -50,10 +50,10 @@ public class SmokeTest extends TestBase {
 		Thread.sleep(2000);
 		homepage.searchButton.click();
 
-		assertEquals(driver.getTitle(),
+		assertEquals(Driver.getDriver().getTitle(),
 				"Advanced searchLocust St, Pittsburgh, PA, USA stays | Room rental, roommate finder, off-campus housing, homestay | 4stay");
 		advancedSearchPage.firstResult.click();
-		AdvancedSearchResultsPage.changeWindow(driver);
+		AdvancedSearchResultsPage.changeWindow(Driver.getDriver());
 
 		advancedSearchPage.dropDown.click();
 		advancedSearchPage.logOut.click();

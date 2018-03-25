@@ -5,22 +5,18 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
+import com.four_stay.utilities.TestBase;
 
-public class SignUpPage {
-
-	private WebDriver driver;
+public class SignUpPage extends TestBase {
 
 	public SignUpPage() {
-		this.driver = Driver.getDriver();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(Driver.getDriver(), this);
 	}
 
 	@FindBy(linkText = "More options")
@@ -70,7 +66,7 @@ public class SignUpPage {
 
 	public void verifyFirstNameIsNotPresent() {
 		try {
-			driver.findElement(By.id("first-name"));
+			Driver.getDriver().findElement(By.id("first-name"));
 
 		} catch (NoSuchElementException e) {
 			System.out.println("First Name Input is not present");
@@ -79,7 +75,7 @@ public class SignUpPage {
 
 	public void verifyLastNameIsNotPresent() {
 		try {
-			driver.findElement(By.id("last-name"));
+			Driver.getDriver().findElement(By.id("last-name"));
 
 		} catch (NoSuchElementException e) {
 			System.out.println("Last Name Input is not present");
@@ -88,7 +84,7 @@ public class SignUpPage {
 	
 	public void verifyLogOutIsNotPresent() {
 		try {
-			driver.findElement(By.cssSelector("a[href='/users/sign_out']"));
+			Driver.getDriver().findElement(By.cssSelector("a[href='/users/sign_out']"));
 
 		} catch (NoSuchElementException e) {
 			System.out.println("Log Out link is not present");
@@ -147,9 +143,8 @@ public class SignUpPage {
 		return newEmailAddress;
 	}
 	public void navigateToSingUpPage() {
-		driver = Driver.getDriver();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get(ConfigurationReader.getProperty("signupurl"));
+		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
 	}
 	public void profileDetails(String phoneNumber,
 			String aboutMyself, String dateOfBirth) {

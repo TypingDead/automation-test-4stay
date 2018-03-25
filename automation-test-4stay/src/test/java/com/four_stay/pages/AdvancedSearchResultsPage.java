@@ -6,14 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.four_stay.utilities.Driver;
+import com.four_stay.utilities.TestBase;
 
-public class AdvancedSearchResultsPage {
-
-	private WebDriver driver;
+public class AdvancedSearchResultsPage extends TestBase {
 	
 	public AdvancedSearchResultsPage() {
-		this.driver = Driver.getDriver();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	
 	@FindBy (css="h2[class='ng-binding']")
@@ -47,22 +45,17 @@ public class AdvancedSearchResultsPage {
 		requestCenter.isDisplayed();
 	}
 	
-	
-	
-	
-	
-	
 	public boolean isAt() {
-		return driver.getTitle().contains("Washington, DC, USA");
+		return Driver.getDriver().getTitle().contains("Washington, DC, USA");
 	}
 	  
 	public boolean isUrl() {
-		return driver.getCurrentUrl().contains("https://4stay.com/advanced_search");
+		return Driver.getDriver().getCurrentUrl().contains("https://4stay.com/advanced_search");
 	}
 	
 	
 	public boolean titleContains() {
-		return driver.getTitle().contains(firstResult.getText());
+		return Driver.getDriver().getTitle().contains(firstResult.getText());
 	}
 	
 	

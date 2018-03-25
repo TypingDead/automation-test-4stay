@@ -6,10 +6,6 @@ import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.four_stay.pages.AdvancedSearchResultsPage;
-import com.four_stay.pages.HomePage;
-import com.four_stay.pages.ListYourStayPage;
-import com.four_stay.pages.SignUpPage;
 import com.four_stay.utilities.BrowserUtils;
 import com.four_stay.utilities.ConfigurationReader;
 import com.four_stay.utilities.Driver;
@@ -17,12 +13,12 @@ import com.four_stay.utilities.TestBase;
 
 public class FunctionalTest extends TestBase {
 	// testCase#11
-	@Test(description = "First test case TC011")
+	@Test(description = "Dima`s test case")
 	public void TC011() {
 
-		ListYourStayPage listYourStayPage = new ListYourStayPage();
-		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
-		driver.get(ConfigurationReader.getProperty("url"));
+//		ListYourStayPage listYourStayPage = new ListYourStayPage();
+//		AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
+		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
 		listYourStayPage.listYourStayButton.click();
 		listYourStayPage.loginHereLink.click();
@@ -33,62 +29,62 @@ public class FunctionalTest extends TestBase {
 
 	}
 
-	@Test(description = " test case TC012")
+	@Test(description = " Dima`s test case")
 	public void TC012_() throws InterruptedException {
-		SignUpPage singUpPage = new SignUpPage();
-		singUpPage.navigateToSingUpPage();
+//		SignUpPage singUpPage = new SignUpPage();
+		signUpPage.navigateToSingUpPage();
 		BrowserUtils.waitFor(3);
-		singUpPage.moreOptions.click();
-		assertTrue(singUpPage.continueWithFacebookButton.isDisplayed());
-		assertTrue(singUpPage.continueWithGoogleButton.isDisplayed());
-		assertTrue(singUpPage.continueEmailButton.isDisplayed());
-		singUpPage.continueEmailButton.click();
+		signUpPage.moreOptions.click();
+		assertTrue(signUpPage.continueWithFacebookButton.isDisplayed());
+		assertTrue(signUpPage.continueWithGoogleButton.isDisplayed());
+		assertTrue(signUpPage.continueEmailButton.isDisplayed());
+		signUpPage.continueEmailButton.click();
 		System.out.println();
 		// sign up field
-		singUpPage.completeUserForm(singUpPage.userfirstName, singUpPage.userlLastName, singUpPage.newEmailAddress,
-				singUpPage.newUserPassword);
+		signUpPage.completeUserForm(signUpPage.userfirstName, signUpPage.userlLastName, signUpPage.newEmailAddress,
+				signUpPage.newUserPassword);
 		// click sing in button
-		singUpPage.signUpButton.click();
+		signUpPage.signUpButton.click();
 		// registered like a GUEST
 		// click on GUEST
-		singUpPage.guestIcon.click();
+		signUpPage.guestIcon.click();
 		// verify GUEST icon is selected
-		assertTrue(singUpPage.guestButtonIsSelected.isDisplayed());
+		assertTrue(signUpPage.guestButtonIsSelected.isDisplayed());
 		// click on button "Next"
-		singUpPage.nextButton.click();
+		signUpPage.nextButton.click();
 		// profile-details
-		singUpPage.profileDetails(singUpPage.userPhoneNumber, singUpPage.aboutMyself, singUpPage.userDoB);
+		signUpPage.profileDetails(signUpPage.userPhoneNumber, signUpPage.aboutMyself, signUpPage.userDoB);
 		// click save button
-		singUpPage.saveButton.click();
+		signUpPage.saveButton.click();
 		BrowserUtils.waitFor(3);
 		// singUpPage.logOut.click();
 		// check name is displayed
-		if (singUpPage.logOut.isDisplayed()) {
-			singUpPage.logOut.click();
+		if (signUpPage.logOut.isDisplayed()) {
+			signUpPage.logOut.click();
 		} else {
-			assertTrue(singUpPage.nameLink.isDisplayed());
+			assertTrue(signUpPage.nameLink.isDisplayed());
 		}
 		// assertTrue(singUpPage.nameLink.isDisplayed());
 		// registered like a HOST
 		BrowserUtils.waitFor(1);
-		driver.get("https://4stay.com/sign-up#!/select-role");
+		Driver.getDriver().get("https://4stay.com/sign-up#!/select-role");
 		// click on HOST button
 		BrowserUtils.waitFor(1);
-		singUpPage.hostIcon.click();
+		signUpPage.hostIcon.click();
 		// verify HOST icon is selected
 		BrowserUtils.waitFor(1);
-		assertTrue(singUpPage.hostIconIsSelected.isDisplayed());
+		assertTrue(signUpPage.hostIconIsSelected.isDisplayed());
 		// click on button "Next"
 		BrowserUtils.waitFor(1);
-		singUpPage.nextButton.click();
+		signUpPage.nextButton.click();
 		// profile-details
 		// BrowserUtils.waitFor(3);
-		singUpPage.hostEmail.clear();
-		singUpPage.hostEmail.sendKeys(singUpPage.newRandomEmailAddress(singUpPage.newEmailAddress));
-		singUpPage.profileDetails(singUpPage.userPhoneNumber, singUpPage.aboutMyself, singUpPage.userDoB);
+		signUpPage.hostEmail.clear();
+		signUpPage.hostEmail.sendKeys(signUpPage.newRandomEmailAddress(signUpPage.newEmailAddress));
+		signUpPage.profileDetails(signUpPage.userPhoneNumber, signUpPage.aboutMyself, signUpPage.userDoB);
 		// click save button
-		singUpPage.saveButton.click();
-		assertEquals(driver.getCurrentUrl(), "https://4stay.com/sign-up#!/profile-details");
+		signUpPage.saveButton.click();
+		assertEquals(Driver.getDriver().getCurrentUrl(), "https://4stay.com/sign-up#!/profile-details");
 
 	}
 }

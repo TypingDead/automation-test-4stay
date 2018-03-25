@@ -15,20 +15,19 @@ import com.four_stay.utilities.TestBase;
 
 public class SignUpFunctionalityTests extends TestBase {
 
-	SignUpPage signUpPage = new SignUpPage();
-	WebDriver driver;
+//	SignUpPage signUpPage = new SignUpPage();
+	
 	WebDriverWait wait;
 
 	@Test( description = "Test case TC013")
 	public void test13() throws InterruptedException {
 
-		driver = Driver.getDriver();
-		driver.get(ConfigurationReader.getProperty("signupurl"));
-		wait = new WebDriverWait(driver, 3);
+		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
+		wait = new WebDriverWait(Driver.getDriver(), 3);
 		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
 		signUpPage.moreOptions.click();
 		signUpPage.emailSignInOption.click();
-		wait = new WebDriverWait(driver, 3);
+		wait = new WebDriverWait(Driver.getDriver(), 3);
 		wait.until(ExpectedConditions.visibilityOf(signUpPage.firstName));
 
 		assertTrue(signUpPage.firstName.isDisplayed());
@@ -54,9 +53,8 @@ public class SignUpFunctionalityTests extends TestBase {
 	@Test( description = "Test case TC014")
 	public void test14(){
 
-		driver = Driver.getDriver();
-		driver.get(ConfigurationReader.getProperty("signupurl"));
-		wait = new WebDriverWait(driver, 3);
+		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
+		wait = new WebDriverWait(Driver.getDriver(), 3);
 		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
 		signUpPage.moreOptions.click();
 		signUpPage.emailSignInOption.click();
@@ -88,9 +86,8 @@ public class SignUpFunctionalityTests extends TestBase {
 	@Test(description = "Test case TC015")
 	public void test15() {
 
-		driver = Driver.getDriver();
-		driver.get(ConfigurationReader.getProperty("signupurl"));
-		wait = new WebDriverWait(driver, 3);
+		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
+		wait = new WebDriverWait(Driver.getDriver(), 3);
 		wait.until(ExpectedConditions.elementToBeClickable(signUpPage.moreOptions));
 		signUpPage.moreOptions.click();
 		signUpPage.emailSignInOption.click();

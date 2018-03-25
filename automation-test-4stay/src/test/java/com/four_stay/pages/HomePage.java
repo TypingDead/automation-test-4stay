@@ -1,20 +1,21 @@
 package com.four_stay.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.four_stay.utilities.Driver;
+import com.four_stay.utilities.TestBase;
 
-public class HomePage {
-
-	private WebDriver driver;
+public class HomePage extends TestBase {
 
 	public HomePage() {
-		this.driver = Driver.getDriver();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(Driver.getDriver(), this);
 	}
+	
+	WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 3);
 
 	@FindBy(linkText = "LOG IN")
 	public WebElement login;
@@ -80,11 +81,11 @@ public class HomePage {
 	}
 
 	public boolean isAt() {
-		return driver.getTitle().equals("Room rental, roommate finder, off-campus housing, homestay | 4stay");
+		return Driver.getDriver().getTitle().equals("Room rental, roommate finder, off-campus housing, homestay | 4stay");
 	}
 
 	public boolean isAtUrl() {
-		return driver.getCurrentUrl().equals("https://4stay.com/");
+		return Driver.getDriver().getCurrentUrl().equals("https://4stay.com/");
 	}
 
 	public boolean forgotPasswordDisplay() {
@@ -92,6 +93,7 @@ public class HomePage {
 	}
 
 	public boolean forgotPasswordMessage() {
+		wait.until(ExpectedConditions.visibilityOf(forgotPassword));
 		return forgotPassword.getText().equals(("Forgot Password?"));
 	}
 	/////////////////////////////
