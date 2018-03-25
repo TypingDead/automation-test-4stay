@@ -20,12 +20,8 @@ import com.four_stay.utilities.TestBase;
 
 public class SearchFunctionalityTests extends TestBase {
 
-//	HomePage homepage = new HomePage();
-//	SignUpPage signUp = new SignUpPage();
-//	AdvancedSearchResultsPage searchResult = new AdvancedSearchResultsPage();
-
-	@Test( description = "test case TC018")
-	public void testCase18() {
+	@Test( description = "Search functionality with empty data")
+	public void TC016() {
 		assertTrue(homepage.isAt());
 		assertTrue(homepage.isAtUrl());
 		homepage.searchTab.click();
@@ -34,8 +30,8 @@ public class SearchFunctionalityTests extends TestBase {
 		assertEquals(homepage.AfterclicktheButton.getText(), "Please type your city, college, or metro");
 	}
 
-	@Test( description = "test case TC019")
-	public void testCase19() throws InterruptedException {
+	@Test( description = "Search functionality with valid data")
+	public void TC017() throws InterruptedException {
 		Actions action = new Actions(Driver.getDriver());
 		assertTrue(homepage.isAt());
 		assertTrue(homepage.isAtUrl());
@@ -50,8 +46,8 @@ public class SearchFunctionalityTests extends TestBase {
 		assertTrue(Integer.parseInt(value) > 0);
 	}
 
-	@Test( description = "test case TC011 From different test case")
-	public void testCase11() {
+	@Test( description = "Search functionality while not being logged in that cannot use Request to stay funtionality.")
+	public void TC018() {
 		Actions action = new Actions(Driver.getDriver());
 		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 		assertTrue(homepage.isAt());
@@ -68,14 +64,15 @@ public class SearchFunctionalityTests extends TestBase {
 		AdvancedSearchResultsPage.changeWindow(Driver.getDriver());
 		advancedSearchPage.titleContains();
 		BrowserUtils.waitFor(2);
+		// request stay will not work because you have to be logged in
 		advancedSearchPage.requestStay.click();
 		BrowserUtils.waitFor(2);
 		assertTrue(advancedSearchPage.logo.isDisplayed());
 
 	}
 
-	@Test( description = "test case TC012 From different test case")
-	public void testCase12() {
+	@Test( description = "Search functionality  while being logged in")
+	public void TC019() {
 		Actions action = new Actions(Driver.getDriver());
 		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 		assertTrue(homepage.isAt());
@@ -96,12 +93,6 @@ public class SearchFunctionalityTests extends TestBase {
 		advancedSearchPage.firstResult.click();
 		AdvancedSearchResultsPage.changeWindow(Driver.getDriver());
 		advancedSearchPage.titleContains();
-		// BrowserUtils.waitFor(2);
-		// searchResult.requestStay.click();
-		// BrowserUtils.waitFor(2);
-		// searchResult.CongratulationDisplay();
-		// searchResult.requestCenter.click();
-		// searchResult.cancelButton.click();
 
 	}
 

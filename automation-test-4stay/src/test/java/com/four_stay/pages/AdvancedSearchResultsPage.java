@@ -19,9 +19,7 @@ public class AdvancedSearchResultsPage extends TestBase {
 	
 	@FindBy (id="check-button")
 	public WebElement requestStay;
-	
-	
-	
+		
 	@FindBy (css="a[class='dropdown-toggle']")
 	public WebElement dropDown;
 	

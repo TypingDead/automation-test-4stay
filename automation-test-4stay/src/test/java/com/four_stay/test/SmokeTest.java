@@ -19,8 +19,6 @@ import com.four_stay.utilities.TestBase;
 
 public class SmokeTest extends TestBase {
 
-	HomePage homepage = new HomePage();
-	AdvancedSearchResultsPage advancedSearchPage = new AdvancedSearchResultsPage();
 	WebDriverWait wait;
 
 	@Test

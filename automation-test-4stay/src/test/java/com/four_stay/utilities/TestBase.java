@@ -11,8 +11,6 @@ import com.four_stay.pages.ListYourStayPage;
 import com.four_stay.pages.SignUpPage;
 
 public class TestBase {
-
-//	protected WebDriver driver;
 	
 	protected HomePage homepage;
 	protected ListYourStayPage listYourStayPage;

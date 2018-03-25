@@ -90,7 +90,7 @@ public class SignUpPage extends TestBase {
 			System.out.println("Log Out link is not present");
 		}
 	}
-	///////////////////////////////////////////////
+	
 	@FindBy(xpath = ("//a[@class='btn facebook-btn w-100 m-0 mb-3']"))
 	public WebElement continueWithFacebookButton;
 	

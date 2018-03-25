@@ -14,13 +14,11 @@ import com.four_stay.utilities.Driver;
 import com.four_stay.utilities.TestBase;
 
 public class SignUpFunctionalityTests extends TestBase {
-
-//	SignUpPage signUpPage = new SignUpPage();
 	
 	WebDriverWait wait;
 
-	@Test( description = "Test case TC013")
-	public void test13() throws InterruptedException {
+	@Test( description = "Sign up with valid test data")
+	public void TC013() throws InterruptedException {
 
 		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(Driver.getDriver(), 3);
@@ -50,8 +48,8 @@ public class SignUpFunctionalityTests extends TestBase {
 
 	}
 
-	@Test( description = "Test case TC014")
-	public void test14(){
+	@Test( description = "Sign up with with valid test data except two digit phone-number")
+	public void TC014(){
 
 		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(Driver.getDriver(), 3);
@@ -83,8 +81,8 @@ public class SignUpFunctionalityTests extends TestBase {
 		assertTrue(signUpPage.logOut.isDisplayed());
 	}
 
-	@Test(description = "Test case TC015")
-	public void test15() {
+	@Test(description = "Sign up with with valid test data except two letter phone-number")
+	public void TC015() {
 
 		Driver.getDriver().get(ConfigurationReader.getProperty("signupurl"));
 		wait = new WebDriverWait(Driver.getDriver(), 3);

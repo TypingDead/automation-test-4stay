@@ -23,14 +23,9 @@ import com.four_stay.utilities.TestBase;
 public class ListYourStayTest extends TestBase {
 
 	WebDriverWait wait;
-//	ListYourStayPage listYourStayPage = new ListYourStayPage();
-//	SignUpPage signup = new SignUpPage();
 
 	@Test(description = "List Your Stay by creating new account using valid test data")
 	public void TC008() {
-
-//		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-//		driverLaunch(ConfigurationReader.getProperty("url"));
 		
 		listYourStayPage.listYourStayButton.click();
 
